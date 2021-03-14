@@ -1,0 +1,9 @@
+source "https://rubygems.org"
+
+# Installing both. Why choose??
+
+gem "minitest"
+gem "rspec"
+gem "pry"
+gem 'approvals', '~> 0.0.24'
+gem 'simplecov'
