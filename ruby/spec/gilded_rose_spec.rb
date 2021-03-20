@@ -15,8 +15,15 @@ describe GildedRose do
       expect(items[0].name).to eq "foo"
     end
 
-    context "When item is Aged Brie" do
-      let(:item){ Item.new("Aged Brie", 0, 0) }
+    context "Sulfuras, Hand of Ragnaros" do
+      let(:items){ [Item.new("Sulfuras, Hand of Ragnaros", -1, 80)] }
+      it 'never changes quality' do
+        3.times do 
+          GildedRose.new(items).update_quality
+          expect(items[0].sell_in).to eq -1
+          expect(items[0].quality).to eq 80
+        end
+      end
     end
   end
 
